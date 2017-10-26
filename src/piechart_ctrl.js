@@ -103,6 +103,9 @@ export class PieChartCtrl extends MetricsPanelCtrl {
       return { decimals: this.panel.decimals, scaledDecimals: null };
     }
 
+    value = Number(value)
+    value = isNaN(value)?0:value;
+
     var delta = value / 2;
     var dec = -Math.floor(Math.log(delta) / Math.LN10);
 
